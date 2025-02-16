@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creative Hub</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f8f9fa;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 5%;
+            background-color: white;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #007bff;
+        }
+
+        .language-selector {
+            margin-left: 1rem;
+            padding-left: 1.5rem;
+            border-left: 1px solid #ddd;
+        }
+
+        .language-selector select {
+            padding: 0.3rem 0.8rem;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            background-color: transparent;
+            color: #666;
+            font-size: 0.95rem;
+            cursor: pointer;
+        }
+
+        header {
+            text-align: center;
+            padding: 4rem 1.5rem;
+            background: url('images/photo.jpg') center/cover no-repeat;
+            color: white;
+            height: 60vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        header p {
+            margin-bottom: 1.5rem;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+            border: none;
+            transition: background 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #0056b3;
+        }
+
+        .features-container {
+            text-align: center;
+            padding: 4rem 5%;
+        }
+
+        .features-container h2 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .features-container p {
+            color: #666;
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+
+        .feature-section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 5rem;
+            padding: 5rem 5%;
+            min-height: 500px;
+        }
+
+        .feature-text {
+            flex: 1;
+            max-width: 600px;
+            padding: 2rem;
+        }
+
+        .feature-image {
+            flex: 1;
+            max-width: 600px;
+            height: 400px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .feature-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .feature-section:nth-child(even) {
+            flex-direction: row-reverse;
+            background-color: #fff;
+        }
+
+        .feature-section h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: #333;
+        }
+
+        .feature-section p {
+            line-height: 1.7;
+            margin-bottom: 2rem;
+            color: #666;
+            font-size: 1.1rem;
+        }
+
+        .feature-links {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+        }
+
+        .feature-links a:not(.button) {
+            color: #007bff;
+            text-decoration: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .feature-links a:not(.button):hover {
+            opacity: 0.8;
+        }
+
+        /* Testimonial Carousel Styles */
+        .testimonial-section {
+            padding: 4rem 5%;
+            background: #fff;
+            text-align: center;
+        }
+
+        .testimonial-container {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 0;
+        }
+
+        .testimonial-slide {
+            display: none;
+            animation: fade 1s ease-in-out;
+        }
+
+        @keyframes fade {
+            from {opacity: 0.4}
+            to {opacity: 1}
+        }
+
+        .testimonial-slide.active {
+            display: block;
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            margin: 0 1rem;
+        }
+
+        .testimonial-image {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 1rem;
+        }
+
+        .testimonial-text {
+            font-size: 1.1rem;
+            color: #666;
+            margin: 1rem 0;
+            line-height: 1.6;
+        }
+
+        .testimonial-author {
+            font-weight: bold;
+            color: #333;
+            margin-top: 1rem;
+        }
+
+        .testimonial-role {
+            color: #888;
+            font-size: 0.9rem;
+        }
+
+        .carousel-nav {
+            margin-top: 2rem;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .carousel-arrow {
+            cursor: pointer;
+            font-size: 2rem;
+            color: #007bff;
+            background: none;
+            border: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .carousel-arrow:hover {
+            opacity: 0.7;
+        }
+
+        .auto-scroll-controls {
+            margin-top: 1rem;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .dot {
+            height: 12px;
+            width: 12px;
+            background-color: #ddd;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .dot.active {
+            background-color: #007bff;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 4rem 5%;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        footer h4 {
+            margin-bottom: 1.5rem;
+        }
+
+        footer ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        footer ul li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .footer-bottom p {
+            margin: 0;
+        }
+
+        .newsletter input[type="email"] {
+            padding: 0.8rem;
+            width: 70%;
+            margin-bottom: 1rem;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+        }
+
+        .newsletter button {
+            padding: 0.8rem 1.5rem;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">Creative Hub</div>
+        <div class="nav-links">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Create</a>
+            <div class="language-selector">
+                <select>
+                    <option>EN</option>
+                    <option>ES</option>
+                </select>
+            </div>
+        </div>
+    </nav>
+
+    <header>
+        <h1>Unleash Your Creativity</h1>
+        <p>Join Creative Hub to explore, create, and inspire.</p>
+        <a href="#" class="button">Sign Up Now</a>
+    </header>
+
+    <section class="features-container">
+        <h2>Creative Hub Features</h2>
+        <p>Explore the powerful tools and functionalities that Creative Hub offers to enhance your creative projects.</p>
+    </section>
+
+    <section class="feature-section">
+        <div class="feature-text">
+            <h2>Project Collaboration</h2>
+            <p>Seamlessly collaborate with team members in real-time, share ideas, and track progress on your creative projects.</p>
+            <div class="feature-links">
+                <a href="#" class="button">Try now</a>
+                <a href="#">Learn more →</a>
+            </div>
+        </div>
+        <div class="feature-image">
+            <img src="images/photo1.jpg" alt="Project Collaboration">
+        </div>
+    </section>
+
+    <section class="feature-section">
+        <div class="feature-text">
+            <h2>Design Tools</h2>
+            <p>Access a wide range of design tools and templates to bring your creative ideas to life with ease and efficiency.</p>
+            <div class="feature-links">
+                <a href="#" class="button">Try now</a>
+                <a href="#">Learn more →</a>
+            </div>
+        </div>
+        <div class="feature-image">
+            <img src="images/photo2.jpg" alt="Design Tools">
+        </div>
+    </section>
+
+    <!-- Testimonial Carousel Section -->
+    <section class="testimonial-section">
+        <h2>What Our Creators Say</h2>
+        <div class="testimonial-container">
+            <div class="testimonial-slide active">
+                <div class="testimonial-card">
+                    <img src="images/photo3.jpg" alt="Emily Johnson" class="testimonial-image">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"Creative Hub revolutionized our workflow. The collaboration tools saved us hundreds of hours in project management!"</p>
+                    <div class="testimonial-author">Emily Johnson</div>
+                    <div class="testimonial-role">Lead Designer at Creative Studio</div>
+                </div>
+            </div>
+
+            <div class="testimonial-slide">
+                <div class="testimonial-card">
+                    <img src="images/photo4.jpg" alt="Michael Chen" class="testimonial-image">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"The design assets library is incredible. It's become our team's go-to resource for all creative projects."</p>
+                    <div class="testimonial-author">Michael Chen</div>
+                    <div class="testimonial-role">Creative Director at DesignWorks</div>
+                </div>
+            </div>
+
+            <div class="testimonial-slide">
+                <div class="testimonial-card">
+                    <img src="images/photo5.jpg" alt="Sarah Müller" class="testimonial-image">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"From prototyping to final delivery, Creative Hub streamlines our entire creative process effortlessly."</p>
+                    <div class="testimonial-author">Sarah Müller</div>
+                    <div class="testimonial-role">Founder of Artistry Collective</div>
+                </div>
+            </div>
+
+            <button class="carousel-arrow prev">❮</button>
+            <button class="carousel-arrow next">❯</button>
+        </div>
+
+        <div class="auto-scroll-controls">
+            <span class="dot active" onclick="currentSlide(0)"></span>
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="newsletter">
+                <h4>Subscribe to our newsletter</h4>
+                <input type="email" placeholder="Enter your email">
+                <button>Subscribe</button>
+            </div>
+            <div>
+                <h4>Product</h4>
+                <ul>
+                    <li>Plans & Pricing</li>
+                    <li>Features</li>
+                    <li>Photos</li>
+                </ul>
+            </div>
+            <div>
+                <h4>Resources</h4>
+                <ul>
+                    <li>Blog</li>
+                    <li>User guides</li>
+                    <li>Webinars</li>
+                </ul>
+            </div>
+            <div>
+                <h4>Company</h4>
+                <ul>
+                    <li>About us</li>
+                    <li>Contact us</li>
+                    <li>Privacy</li>
+                    <li>Terms</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Creative Hub by Miroslav Nikolic</p>
+        </div>
+    </footer>
+
+    <script>
+        let slideIndex = 0;
+        let autoScrollInterval;
+
+        function showSlides(n) {
+            const slides = document.getElementsByClassName("testimonial-slide");
+            const dots = document.getElementsByClassName("dot");
+            
+            if (n >= slides.length) slideIndex = 0;
+            if (n < 0) slideIndex = slides.length - 1;
+            
+            Array.from(slides).forEach(slide => slide.classList.remove("active"));
+            Array.from(dots).forEach(dot => dot.classList.remove("active"));
+            
+            slides[slideIndex].classList.add("active");
+            dots[slideIndex].classList.add("active");
+        }
+
+        function nextSlide() {
+            slideIndex++;
+            showSlides(slideIndex);
+        }
+
+        function prevSlide() {
+            slideIndex--;
+            showSlides(slideIndex);
+        }
+
+        function currentSlide(n) {
+            slideIndex = n;
+            showSlides(slideIndex);
+            resetAutoScroll();
+        }
+
+        function resetAutoScroll() {
+            clearInterval(autoScrollInterval);
+            autoScrollInterval = setInterval(nextSlide, 5000);
+        }
+
+        // Initialize auto-scroll
+        autoScrollInterval = setInterval(nextSlide, 5000);
+
+        // Event listeners
+        document.querySelector('.prev').addEventListener('click', () => {
+            prevSlide();
+            resetAutoScroll();
+        });
+
+        document.querySelector('.next').addEventListener('click', () => {
+            nextSlide();
+            resetAutoScroll();
+        });
+    </script>
+</body>
+</html>
