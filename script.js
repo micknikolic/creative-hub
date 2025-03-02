@@ -12,6 +12,7 @@ async function fetchTestimonials() {
     }
 }
 
+// Edited as a part of Assignment 6: Adjusted to dynamically load testimonials from JSON
 // Create testimonial slides and dots dynamically
 function createTestimonialSlides(testimonials) {
     const container = document.querySelector('.testimonial-container');
@@ -86,6 +87,7 @@ function resetAutoScroll() {
     autoScrollInterval = setInterval(nextSlide, 5000); // Auto-scroll every 5 seconds
 }
 
+// Edited as a part of Assignment 6: Added language selector functionality
 // Language selector functionality
 const languageSelect = document.getElementById('language-select');
 
@@ -103,6 +105,7 @@ function setLanguage(lang) {
     });
 }
 
+// Edited as a part of Assignment 6: Added newsletter form validation and submission
 // Newsletter form validation and submission
 function handleNewsletterSubmission(formId, emailInputId) {
     const form = document.getElementById(formId);
@@ -130,6 +133,7 @@ function validateEmail(email) {
 handleNewsletterSubmission('newsletter-form-en', 'email-input-en');
 handleNewsletterSubmission('newsletter-form-es', 'email-input-es');
 
+// Edited as a part of Assignment 6: Added sign-up modal functionality
 // Sign Up Modal functionality
 const modal = document.getElementById('signup-modal');
 const closeBtn = document.querySelector('.close');
