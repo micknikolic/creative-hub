@@ -1,14 +1,14 @@
 // Fetch testimonials from testimonials.json
 async function fetchTestimonials() {
     try {
-        const response = await fetch('testimonials.json'); 
+        const response = await fetch('testimonials.json');
         if (!response.ok) {
             throw new Error('Network response was not ok');
         }
         return await response.json();
     } catch (error) {
         console.error('Failed to fetch testimonials:', error);
-        return []; // Return empty array if fetch fails so the site doesn’t break
+        return []; // Return empty array if fetch fails to prevent breaking the site
     }
 }
 
@@ -45,7 +45,7 @@ function createTestimonialSlides(testimonials) {
     resetAutoScroll();
 }
 
-// Carousel logic
+// Carousel logic for testimonials
 let slideIndex = 0;
 let autoScrollInterval;
 
@@ -83,7 +83,7 @@ function currentSlide(n) {
 
 function resetAutoScroll() {
     clearInterval(autoScrollInterval);
-    autoScrollInterval = setInterval(nextSlide, 5000);
+    autoScrollInterval = setInterval(nextSlide, 5000); // Auto-scroll every 5 seconds
 }
 
 // Language selector functionality
@@ -96,10 +96,10 @@ languageSelect.addEventListener('change', (event) => {
 
 function setLanguage(lang) {
     document.querySelectorAll('.content-en, .content-es').forEach(element => {
-        element.style.display = 'none';
+        element.style.display = 'none'; // Hide all language content
     });
     document.querySelectorAll(`.content-${lang}`).forEach(element => {
-        element.style.display = 'block';
+        element.style.display = 'block'; // Show selected language content
     });
 }
 
@@ -110,18 +110,17 @@ function handleNewsletterSubmission(formId, emailInputId) {
     
     form.addEventListener('submit', (event) => {
         event.preventDefault(); // Prevent traditional form submission
-        
         const email = emailInput.value.trim();
         if (validateEmail(email)) {
-            alert('Subscribed successfully!'); // Simulate submission success
-            emailInput.value = ''; // Clear the input field
+            alert('Subscribed successfully!'); // Simulate successful subscription
+            emailInput.value = ''; // Clear input field
         } else {
             alert('Please enter a valid email address.');
         }
     });
 }
 
-// Simple email validation function using regex
+// Simple email validation using regex
 function validateEmail(email) {
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return regex.test(email);
@@ -130,6 +129,48 @@ function validateEmail(email) {
 // Initialize newsletter forms for both languages
 handleNewsletterSubmission('newsletter-form-en', 'email-input-en');
 handleNewsletterSubmission('newsletter-form-es', 'email-input-es');
+
+// Sign Up Modal functionality
+const modal = document.getElementById('signup-modal');
+const closeBtn = document.querySelector('.close');
+
+// Open modal when sign-up buttons are clicked
+document.getElementById('signup-button-en').addEventListener('click', () => {
+    modal.style.display = 'flex'; // Show modal in English
+});
+document.getElementById('signup-button-es').addEventListener('click', () => {
+    modal.style.display = 'flex'; // Show modal in Spanish
+});
+
+// Close modal when close button is clicked
+closeBtn.addEventListener('click', () => {
+    modal.style.display = 'none';
+});
+
+// Close modal when clicking outside the modal content
+window.addEventListener('click', (event) => {
+    if (event.target === modal) {
+        modal.style.display = 'none';
+    }
+});
+
+// Handle sign-up form submission
+const signupForm = document.getElementById('signup-form');
+signupForm.addEventListener('submit', (event) => {
+    event.preventDefault(); // Prevent default form submission
+    const name = document.getElementById('name-input').value.trim();
+    const email = document.getElementById('email-input').value.trim();
+    
+    if (name && validateEmail(email)) {
+        alert('Signed up successfully!'); // Simulate successful sign-up
+        modal.style.display = 'none'; // Close modal
+        // Clear form fields
+        document.getElementById('name-input').value = '';
+        document.getElementById('email-input').value = '';
+    } else {
+        alert('Please fill in all fields with valid information.');
+    }
+});
 
 // Initialize everything when the page loads
 (async () => {
@@ -140,10 +181,10 @@ handleNewsletterSubmission('newsletter-form-es', 'email-input-es');
         console.log('No testimonials loaded - check testimonials.json path or content.');
     }
     
-    setLanguage('en');
+    setLanguage('en'); // Default to English
 })();
 
-// Add event listeners for arrow buttons
+// Add event listeners for carousel arrows
 document.querySelector('.prev').addEventListener('click', () => {
     prevSlide();
     resetAutoScroll();
