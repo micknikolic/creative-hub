@@ -3,7 +3,7 @@
         "image": "images/photo3.jpg",
         "name": "Emily Johnson",
         "role": "Lead Designer at Creative Studio",
-        "text": "Creative Hub revolutionized our workflow. The collaboration tools saved us hundreds of hours in project management!",
+        "text": "Creative Hub revolutionized our workflow. The AI-collaborator saved us hundreds of hours in design ideation and prototyping!",
         "rating": 5
     },
     {
@@ -17,7 +17,7 @@
         "image": "images/photo5.jpg",
         "name": "Sarah Müller",
         "role": "Founder of Artistry Collective",
-        "text": "From prototyping to final delivery, Creative Hub streamlines our entire creative process effortlessly.",
+        "text": "From prototyping to final delivery, Creative Hub streamlines our entire creative process effortlessly. Amazing experts, cutting-edge technology!",
         "rating": 5
     }
 ]
