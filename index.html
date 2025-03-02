@@ -379,74 +379,6 @@
             font-size: 1.5rem;
             cursor: pointer;
         }
-
-        /* Contact form styles */
-        footer form {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-
-        footer form label {
-            font-size: 1rem;
-        }
-
-        footer form input, footer form textarea {
-            padding: 0.8rem;
-            border-radius: 4px;
-            border: 1px solid #ddd;
-        }
-
-        footer form button {
-            padding: 0.8rem;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-
-        /* How It Works section styles */
-        #how-it-works {
-            text-align: center;
-            padding: 4rem 5%;
-            background-color: #f8f9fa;
-        }
-
-        #how-it-works h2 {
-            font-size: 2rem;
-            margin-bottom: 2rem;
-        }
-
-        #how-it-works ol {
-            list-style: none;
-            counter-reset: step-counter;
-            padding: 0;
-        }
-
-        #how-it-works li {
-            font-size: 1.2rem;
-            margin-bottom: 1.5rem;
-            position: relative;
-            padding-left: 2.5rem;
-        }
-
-        #how-it-works li::before {
-            counter-increment: step-counter;
-            content: counter(step-counter);
-            position: absolute;
-            left: 0;
-            top: 0;
-            background: #007bff;
-            color: white;
-            border-radius: 50%;
-            width: 2rem;
-            height: 2rem;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-weight: bold;
-        }
     </style>
 </head>
 <body>
@@ -467,98 +399,80 @@
         </div>
     </nav>
 
-    <!-- Updated Header -->
+    <!-- Header with Clear Purpose Statement: This was updated based on the feedback that was given on Assessment 1 -->
     <header>
         <div class="content-en">
-            <h1>Transform Your Brand with Professional Graphic Design</h1>
-            <p>Join Creative Hub to elevate your hospitality brand with custom designs.</p>
+            <h1>Unleash Your Brand's Potential with Professional Graphic Design</h1>
+            <p><strong>Our Purpose:</strong> Creative Hub delivers expert graphic design services to elevate your brand with stunning visuals.</p>
+            <p>We specialize in custom logos, menus, and promotional materials tailored for hospitality businesses.</p>
             <button class="button" id="signup-button-en">Start Your Design Subscription Today</button>
         </div>
         <div class="content-es" style="display: none;">
-            <h1>Transforma Tu Marca con Diseño Gráfico Profesional</h1>
-            <p>Únete a Creative Hub para elevar tu marca de hospitalidad con diseños personalizados.</p>
+            <h1>Libera el Potencial de Tu Marca con Diseño Gráfico Profesional</h1>
+            <p><strong>Nuestro Propósito:</strong> Creative Hub ofrece servicios expertos de diseño gráfico para elevar tu marca con visuales impresionantes.</p>
+            <p>Nos especializamos en logos personalizados, menús y materiales promocionales adaptados para negocios de hospitalidad.</p>
             <button class="button" id="signup-button-es">Comienza Tu Suscripción de Diseño Hoy</button>
         </div>
     </header>
 
-    <!-- Updated Features Container -->
+    <!-- Features Container Emphasizing Experience -->
     <section class="features-container">
         <div class="content-en">
-            <h2>Our Graphic Design Services</h2>
-            <p>Explore the powerful design tools and services that Creative Hub offers to enhance your brand.</p>
+            <h2>Experience Our Graphic Design Services</h2>
+            <p>Discover how our tailored graphic design solutions can enhance your brand’s visual identity.</p>
         </div>
         <div class="content-es" style="display: none;">
-            <h2>Nuestros Servicios de Diseño Gráfico</h2>
-            <p>Explora las poderosas herramientas de diseño y servicios que Creative Hub ofrece para mejorar tu marca.</p>
+            <h2>Experimenta Nuestros Servicios de Diseño Gráfico</h2>
+            <p>Descubre cómo nuestras soluciones de diseño gráfico personalizadas pueden mejorar la identidad visual de tu marca.</p>
         </div>
     </section>
 
-    <!-- Updated Feature Sections -->
+    <!-- Feature Sections with Graphic Design Focus -->
     <section class="feature-section">
         <div class="feature-text">
             <div class="content-en">
-                <h2>Logo Design</h2>
-                <p>Craft a unique logo that defines your hospitality business.</p>
+                <h2>Collaborate Seamlessly on Your Graphic Design Projects</h2>
+                <p>Partner with our expert graphic design team in real-time to bring your vision to life. Share feedback, track progress, and create stunning designs that tell your brand’s story.</p>
                 <div class="feature-links">
-                    <a href="#" class="button">Get Started</a>
+                    <a href="#" class="button">Start Collaborating</a>
                     <a href="#">Learn more →</a>
                 </div>
             </div>
             <div class="content-es" style="display: none;">
-                <h2>Diseño de Logo</h2>
-                <p>Crea un logo único que defina tu negocio de hospitalidad.</p>
+                <h2>Colabora Sin Problemas en Tus Proyectos de Diseño Gráfico</h2>
+                <p>Trabaja con nuestro equipo experto de diseño gráfico en tiempo real para dar vida a tu visión. Comparte comentarios, sigue el progreso y crea diseños impresionantes que cuenten la historia de tu marca.</p>
                 <div class="feature-links">
-                    <a href="#" class="button">Comenzar</a>
+                    <a href="#" class="button">Comenzar a Colaborar</a>
                     <a href="#">Aprende más →</a>
                 </div>
             </div>
         </div>
         <div class="feature-image">
-            <img src="images/logo-design.jpg" alt="Logo Design">
+            <img src="images/collaboration.jpg" alt="Graphic Design Collaboration">
         </div>
     </section>
 
     <section class="feature-section">
         <div class="feature-text">
             <div class="content-en">
-                <h2>Branding</h2>
-                <p>Create stunning menus and promotional materials for your restaurant.</p>
+                <h2>Access Premium Design Tools and Templates</h2>
+                <p>Experience our graphic design services with a suite of premium tools and customizable templates that make your brand stand out—from logos to marketing materials.</p>
                 <div class="feature-links">
-                    <a href="#" class="button">Get Started</a>
+                    <a href="#" class="button">Explore Tools</a>
                     <a href="#">Learn more →</a>
                 </div>
             </div>
             <div class="content-es" style="display: none;">
-                <h2>Branding</h2>
-                <p>Crea menús impresionantes y materiales promocionales para tu restaurante.</p>
+                <h2>Accede a Herramientas y Plantillas de Diseño Premium</h2>
+                <p>Experimenta nuestros servicios de diseño gráfico con una suite de herramientas premium y plantillas personalizables que hacen que tu marca destaque, desde logos hasta materiales de marketing.</p>
                 <div class="feature-links">
-                    <a href="#" class="button">Comenzar</a>
+                    <a href="#" class="button">Explorar Herramientas</a>
                     <a href="#">Aprende más →</a>
                 </div>
             </div>
         </div>
         <div class="feature-image">
-            <img src="images/branding.jpg" alt="Branding">
-        </div>
-    </section>
-
-    <!-- New How It Works Section - Changed as the result of comments given on Assessment 1 -->
-    <section id="how-it-works">
-        <div class="content-en">
-            <h2>How It Works</h2>
-            <ol>
-                <li>Sign up for a design subscription.</li>
-                <li>Submit your design requests.</li>
-                <li>Get custom designs with unlimited revisions.</li>
-            </ol>
-        </div>
-        <div class="content-es" style="display: none;">
-            <h2>Cómo Funciona</h2>
-            <ol>
-                <li>Regístrate para una suscripción de diseño.</li>
-                <li>Envía tus solicitudes de diseño.</li>
-                <li>Obtén diseños personalizados con revisiones ilimitadas.</li>
-            </ol>
+            <img src="images/design-tools.jpg" alt="Design Tools">
         </div>
     </section>
 
@@ -575,7 +489,7 @@
         </div>
     </section>
 
-    <!-- Updated Footer with Contact Form -->
+    <!-- Footer with Newsletter Forms -->
     <footer>
         <div class="footer-content">
             <div class="newsletter">
