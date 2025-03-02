@@ -94,6 +94,28 @@ function resetAutoScroll() {
     autoScrollInterval = setInterval(nextSlide, 5000); // Auto-scroll every 5 seconds
 }
 
+// Language selector functionality
+const languageSelect = document.getElementById('language-select');
+
+// Listen for changes in the language dropdown
+languageSelect.addEventListener('change', (event) => {
+    const selectedLanguage = event.target.value; // Get the selected language (en or es)
+    setLanguage(selectedLanguage); // Update the visible content
+});
+
+// Function to set the language and toggle content visibility
+function setLanguage(lang) {
+    // Hide all content blocks for both languages
+    document.querySelectorAll('.content-en, .content-es').forEach(element => {
+        element.style.display = 'none';
+    });
+    
+    // Show only the content blocks for the selected language
+    document.querySelectorAll(`.content-${lang}`).forEach(element => {
+        element.style.display = 'block';
+    });
+}
+
 // Initialize everything when the page loads
 (async () => {
     const testimonials = await fetchTestimonials();
@@ -102,6 +124,9 @@ function resetAutoScroll() {
     } else {
         console.log('No testimonials loaded - check testimonials.json path or content.');
     }
+    
+    // Set default language to English on page load
+    setLanguage('en');
 })();
 
 // Add event listeners for arrow buttons
