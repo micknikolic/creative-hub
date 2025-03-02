@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Creative Hub</title>
+    <title>Creative Hub - Graphic Design Services</title>
     <style>
         /* Reset and base styles */
         * {
@@ -85,7 +85,7 @@
             font-weight: bold;
             border: none;
             transition: background 0.3s ease;
-            cursor: pointer; /* Added for button elements */
+            cursor: pointer;
         }
 
         .button:hover {
@@ -327,14 +327,14 @@
 
         /* Modal styles for sign-up */
         .modal {
-            display: none; /* Hidden by default */
+            display: none;
             position: fixed;
             z-index: 1000;
             left: 0;
             top: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+            background-color: rgba(0, 0, 0, 0.5);
             justify-content: center;
             align-items: center;
         }
@@ -379,6 +379,74 @@
             font-size: 1.5rem;
             cursor: pointer;
         }
+
+        /* Contact form styles */
+        footer form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        footer form label {
+            font-size: 1rem;
+        }
+
+        footer form input, footer form textarea {
+            padding: 0.8rem;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+        }
+
+        footer form button {
+            padding: 0.8rem;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        /* How It Works section styles */
+        #how-it-works {
+            text-align: center;
+            padding: 4rem 5%;
+            background-color: #f8f9fa;
+        }
+
+        #how-it-works h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        #how-it-works ol {
+            list-style: none;
+            counter-reset: step-counter;
+            padding: 0;
+        }
+
+        #how-it-works li {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-left: 2.5rem;
+        }
+
+        #how-it-works li::before {
+            counter-increment: step-counter;
+            content: counter(step-counter);
+            position: absolute;
+            left: 0;
+            top: 0;
+            background: #007bff;
+            color: white;
+            border-radius: 50%;
+            width: 2rem;
+            height: 2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
@@ -387,8 +455,9 @@
         <div class="logo">Creative Hub</div>
         <div class="nav-links">
             <a href="#">Home</a>
-            <a href="#">About</a>
-            <a href="#">Create</a>
+            <a href="#">Services</a>
+            <a href="#">Portfolio</a>
+            <a href="#">Contact</a>
             <div class="language-selector">
                 <select id="language-select">
                     <option value="en">EN</option>
@@ -398,86 +467,104 @@
         </div>
     </nav>
 
-    <!-- Header with language-specific content and modal trigger buttons -->
+    <!-- Updated Header -->
     <header>
         <div class="content-en">
-            <h1>Unleash Your Creativity</h1>
-            <p>Join Creative Hub to explore, create, and inspire.</p>
-            <!-- Replaced static link with button to trigger modal -->
-            <button class="button" id="signup-button-en">Sign Up Now</button>
+            <h1>Transform Your Brand with Professional Graphic Design</h1>
+            <p>Join Creative Hub to elevate your hospitality brand with custom designs.</p>
+            <button class="button" id="signup-button-en">Start Your Design Subscription Today</button>
         </div>
         <div class="content-es" style="display: none;">
-            <h1>Libera Tu Creatividad</h1>
-            <p>Únete a Creative Hub para explorar, crear e inspirar.</p>
-            <!-- Replaced static link with button to trigger modal -->
-            <button class="button" id="signup-button-es">Regístrate Ahora</button>
+            <h1>Transforma Tu Marca con Diseño Gráfico Profesional</h1>
+            <p>Únete a Creative Hub para elevar tu marca de hospitalidad con diseños personalizados.</p>
+            <button class="button" id="signup-button-es">Comienza Tu Suscripción de Diseño Hoy</button>
         </div>
     </header>
 
-    <!-- Features container with language-specific content -->
+    <!-- Updated Features Container -->
     <section class="features-container">
         <div class="content-en">
-            <h2>Creative Hub Features</h2>
-            <p>Explore the powerful tools and functionalities that Creative Hub offers to enhance your creative projects.</p>
+            <h2>Our Graphic Design Services</h2>
+            <p>Explore the powerful design tools and services that Creative Hub offers to enhance your brand.</p>
         </div>
         <div class="content-es" style="display: none;">
-            <h2>Características de Creative Hub</h2>
-            <p>Explora las poderosas herramientas y funcionalidades que Creative Hub ofrece para mejorar tus proyectos creativos.</p>
+            <h2>Nuestros Servicios de Diseño Gráfico</h2>
+            <p>Explora las poderosas herramientas de diseño y servicios que Creative Hub ofrece para mejorar tu marca.</p>
         </div>
     </section>
 
-    <!-- Feature sections -->
+    <!-- Updated Feature Sections -->
     <section class="feature-section">
         <div class="feature-text">
             <div class="content-en">
-                <h2>Project Collaboration</h2>
-                <p>Seamlessly collaborate with team members in real-time, share ideas, and track progress on your creative projects.</p>
+                <h2>Logo Design</h2>
+                <p>Craft a unique logo that defines your hospitality business.</p>
                 <div class="feature-links">
-                    <a href="#" class="button">Try now</a>
+                    <a href="#" class="button">Get Started</a>
                     <a href="#">Learn more →</a>
                 </div>
             </div>
             <div class="content-es" style="display: none;">
-                <h2>Colaboración en Proyectos</h2>
-                <p>Colabora sin problemas con los miembros del equipo en tiempo real, comparte ideas y sigue el progreso de tus proyectos creativos.</p>
+                <h2>Diseño de Logo</h2>
+                <p>Crea un logo único que defina tu negocio de hospitalidad.</p>
                 <div class="feature-links">
-                    <a href="#" class="button">Prueba ahora</a>
+                    <a href="#" class="button">Comenzar</a>
                     <a href="#">Aprende más →</a>
                 </div>
             </div>
         </div>
         <div class="feature-image">
-            <img src="images/photo1.jpg" alt="Project Collaboration">
+            <img src="images/logo-design.jpg" alt="Logo Design">
         </div>
     </section>
 
     <section class="feature-section">
         <div class="feature-text">
             <div class="content-en">
-                <h2>Design Tools</h2>
-                <p>Access a wide range of design tools and templates to bring your creative ideas to life with ease and efficiency.</p>
+                <h2>Branding</h2>
+                <p>Create stunning menus and promotional materials for your restaurant.</p>
                 <div class="feature-links">
-                    <a href="#" class="button">Try now</a>
+                    <a href="#" class="button">Get Started</a>
                     <a href="#">Learn more →</a>
                 </div>
             </div>
             <div class="content-es" style="display: none;">
-                <h2>Herramientas de Diseño</h2>
-                <p>Accede a una amplia gama de herramientas de diseño y plantillas para dar vida a tus ideas creativas con facilidad y eficiencia.</p>
+                <h2>Branding</h2>
+                <p>Crea menús impresionantes y materiales promocionales para tu restaurante.</p>
                 <div class="feature-links">
-                    <a href="#" class="button">Prueba ahora</a>
+                    <a href="#" class="button">Comenzar</a>
                     <a href="#">Aprende más →</a>
                 </div>
             </div>
         </div>
         <div class="feature-image">
-            <img src="images/photo2.jpg" alt="Design Tools">
+            <img src="images/branding.jpg" alt="Branding">
         </div>
     </section>
 
-    <!-- Testimonial section -->
+    <!-- New How It Works Section - Changed as the result of comments given on Assessment 1 -->
+    <section id="how-it-works">
+        <div class="content-en">
+            <h2>How It Works</h2>
+            <ol>
+                <li>Sign up for a design subscription.</li>
+                <li>Submit your design requests.</li>
+                <li>Get custom designs with unlimited revisions.</li>
+            </ol>
+        </div>
+        <div class="content-es" style="display: none;">
+            <h2>Cómo Funciona</h2>
+            <ol>
+                <li>Regístrate para una suscripción de diseño.</li>
+                <li>Envía tus solicitudes de diseño.</li>
+                <li>Obtén diseños personalizados con revisiones ilimitadas.</li>
+            </ol>
+        </div>
+    </section>
+
+    <!-- Testimonial Section -->
     <section class="testimonial-section">
-        <h2>What Our Creators Say</h2>
+        <h2>What Our Clients Say</h2>
         <div class="testimonial-container">
             <!-- Testimonials will be inserted dynamically by script.js -->
         </div>
@@ -488,7 +575,7 @@
         </div>
     </section>
 
-    <!-- Footer with newsletter forms -->
+    <!-- Updated Footer with Contact Form -->
     <footer>
         <div class="footer-content">
             <div class="newsletter">
@@ -509,19 +596,19 @@
             </div>
             <div>
                 <div class="content-en">
-                    <h4>Product</h4>
+                    <h4>Services</h4>
                     <ul>
-                        <li>Plans & Pricing</li>
-                        <li>Features</li>
-                        <li>Photos</li>
+                        <li>Logo Design</li>
+                        <li>Branding</li>
+                        <li>Marketing Materials</li>
                     </ul>
                 </div>
                 <div class="content-es" style="display: none;">
-                    <h4>Producto</h4>
+                    <h4>Servicios</h4>
                     <ul>
-                        <li>Planes y Precios</li>
-                        <li>Características</li>
-                        <li>Fotos</li>
+                        <li>Diseño de Logo</li>
+                        <li>Branding</li>
+                        <li>Materiales de Marketing</li>
                     </ul>
                 </div>
             </div>
@@ -530,7 +617,7 @@
                     <h4>Resources</h4>
                     <ul>
                         <li>Blog</li>
-                        <li>User guides</li>
+                        <li>Guides</li>
                         <li>Webinars</li>
                     </ul>
                 </div>
@@ -538,29 +625,35 @@
                     <h4>Recursos</h4>
                     <ul>
                         <li>Blog</li>
-                        <li>Guías de usuario</li>
+                        <li>Guías</li>
                         <li>Webinars</li>
                     </ul>
                 </div>
             </div>
             <div>
                 <div class="content-en">
-                    <h4>Company</h4>
-                    <ul>
-                        <li>About us</li>
-                        <li>Contact us</li>
-                        <li>Privacy</li>
-                        <li>Terms</li>
-                    </ul>
+                    <h4>Contact Us</h4>
+                    <form action="https://formspree.io/your-email" method="post">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" required>
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                        <label for="message">Message:</label>
+                        <textarea id="message" name="message" required></textarea>
+                        <button type="submit">Send</button>
+                    </form>
                 </div>
                 <div class="content-es" style="display: none;">
-                    <h4>Compañía</h4>
-                    <ul>
-                        <li>Sobre nosotros</li>
-                        <li>Contáctanos</li>
-                        <li>Privacidad</li>
-                        <li>Términos</li>
-                    </ul>
+                    <h4>Contáctanos</h4>
+                    <form action="https://formspree.io/your-email" method="post">
+                        <label for="name">Nombre:</label>
+                        <input type="text" id="name" name="name" required>
+                        <label for="email">Correo:</label>
+                        <input type="email" id="email" name="email" required>
+                        <label for="message">Mensaje:</label>
+                        <textarea id="message" name="message" required></textarea>
+                        <button type="submit">Enviar</button>
+                    </form>
                 </div>
             </div>
         </div>
@@ -577,7 +670,7 @@
     <!-- Sign Up Modal -->
     <div id="signup-modal" class="modal">
         <div class="modal-content">
-            <span class="close">&times;</span> <!-- Close button -->
+            <span class="close">×</span>
             <h2>Sign Up</h2>
             <form id="signup-form">
                 <input type="text" id="name-input" placeholder="Name" required>
