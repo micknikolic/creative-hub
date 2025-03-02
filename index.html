@@ -335,32 +335,64 @@
             <a href="#">About</a>
             <a href="#">Create</a>
             <div class="language-selector">
-                <select>
-                    <option>EN</option>
-                    <option>ES</option>
+                <!-- Added id="language-select" and value attributes for language options -->
+                <select id="language-select">
+                    <option value="en">EN</option>
+                    <option value="es">ES</option>
                 </select>
             </div>
         </div>
     </nav>
 
+    <!-- Header with language-specific content blocks -->
     <header>
-        <h1>Unleash Your Creativity</h1>
-        <p>Join Creative Hub to explore, create, and inspire.</p>
-        <a href="#" class="button">Sign Up Now</a>
+        <!-- English content, visible by default -->
+        <div class="content-en">
+            <h1>Unleash Your Creativity</h1>
+            <p>Join Creative Hub to explore, create, and inspire.</p>
+            <a href="#" class="button">Sign Up Now</a>
+        </div>
+        <!-- Spanish content, hidden by default -->
+        <div class="content-es" style="display: none;">
+            <h1>Libera Tu Creatividad</h1>
+            <p>Únete a Creative Hub para explorar, crear e inspirar.</p>
+            <a href="#" class="button">Regístrate Ahora</a>
+        </div>
     </header>
 
+    <!-- Features container with language-specific content -->
     <section class="features-container">
-        <h2>Creative Hub Features</h2>
-        <p>Explore the powerful tools and functionalities that Creative Hub offers to enhance your creative projects.</p>
+        <!-- English content, visible by default -->
+        <div class="content-en">
+            <h2>Creative Hub Features</h2>
+            <p>Explore the powerful tools and functionalities that Creative Hub offers to enhance your creative projects.</p>
+        </div>
+        <!-- Spanish content, hidden by default -->
+        <div class="content-es" style="display: none;">
+            <h2>Características de Creative Hub</h2>
+            <p>Explora las poderosas herramientas y funcionalidades que Creative Hub ofrece para mejorar tus proyectos creativos.</p>
+        </div>
     </section>
 
     <section class="feature-section">
         <div class="feature-text">
-            <h2>Project Collaboration</h2>
-            <p>Seamlessly collaborate with team members in real-time, share ideas, and track progress on your creative projects.</p>
-            <div class="feature-links">
-                <a href="#" class="button">Try now</a>
-                <a href="#">Learn more →</a>
+            <!-- English content, visible by default -->
+            <div class="content-en">
+                <h2>Project Collaboration</h2>
+                <p>Seamlessly collaborate with team members in real-time, share ideas, and track progress on your creative projects.</p>
+                <div class="feature-links">
+                    <a href="#" class="button">Try now</a>
+                    <a href="#">Learn more →</a>
+                </div>
+            </div>
+            <!-- Spanish content, hidden by default -->
+            <div class="content-es" style="display: none;">
+                <h2>Colaboración en Proyectos</h2>
+                <p>Colabora sin problemas con los miembros del equipo en tiempo real, comparte ideas y sigue el progreso de tus proyectos creativos.</p>
+                <div class="feature-links">
+                    <a href="#" class="button">Prueba ahora</a>
+                    <a href="#">Aprende más →</a>
+                </div>
             </div>
         </div>
         <div class="feature-image">
@@ -370,11 +402,23 @@
 
     <section class="feature-section">
         <div class="feature-text">
-            <h2>Design Tools</h2>
-            <p>Access a wide range of design tools and templates to bring your creative ideas to life with ease and efficiency.</p>
-            <div class="feature-links">
-                <a href="#" class="button">Try now</a>
-                <a href="#">Learn more →</a>
+            <!-- English content, visible by default -->
+            <div class="content-en">
+                <h2>Design Tools</h2>
+                <p>Access a wide range of design tools and templates to bring your creative ideas to life with ease and efficiency.</p>
+                <div class="feature-links">
+                    <a href="#" class="button">Try now</a>
+                    <a href="#">Learn more →</a>
+                </div>
+            </div>
+            <!-- Spanish content, hidden by default -->
+            <div class="content-es" style="display: none;">
+                <h2>Herramientas de Diseño</h2>
+                <p>Accede a una amplia gama de herramientas de diseño y plantillas para dar vida a tus ideas creativas con facilidad y eficiencia.</p>
+                <div class="feature-links">
+                    <a href="#" class="button">Prueba ahora</a>
+                    <a href="#">Aprende más →</a>
+                </div>
             </div>
         </div>
         <div class="feature-image">
@@ -382,7 +426,7 @@
         </div>
     </section>
 
-    <!-- Testimonial Carousel Section - Updated for Assignment 6 -->
+    <!-- Testimonial section -->
     <section class="testimonial-section">
         <h2>What Our Creators Say</h2>
         <div class="testimonial-container">
@@ -395,45 +439,98 @@
         </div>
     </section>
 
+    <!-- Footer with language-specific content -->
     <footer>
         <div class="footer-content">
             <div class="newsletter">
-                <h4>Subscribe to our newsletter</h4>
-                <input type="email" placeholder="Enter your email">
-                <button>Subscribe</button>
+                <!-- English content, visible by default -->
+                <div class="content-en">
+                    <h4>Subscribe to our newsletter</h4>
+                    <input type="email" placeholder="Enter your email">
+                    <button>Subscribe</button>
+                </div>
+                <!-- Spanish content, hidden by default -->
+                <div class="content-es" style="display: none;">
+                    <h4>Suscríbete a nuestro boletín</h4>
+                    <input type="email" placeholder="Ingresa tu correo">
+                    <button>Suscribirse</button>
+                </div>
             </div>
             <div>
-                <h4>Product</h4>
-                <ul>
-                    <li>Plans & Pricing</li>
-                    <li>Features</li>
-                    <li>Photos</li>
-                </ul>
+                <!-- English content, visible by default -->
+                <div class="content-en">
+                    <h4>Product</h4>
+                    <ul>
+                        <li>Plans & Pricing</li>
+                        <li>Features</li>
+                        <li>Photos</li>
+                    </ul>
+                </div>
+                <!-- Spanish content, hidden by default -->
+                <div class="content-es" style="display: none;">
+                    <h4>Producto</h4>
+                    <ul>
+                        <li>Planes y Precios</li>
+                        <li>Características</li>
+                        <li>Fotos</li>
+                    </ul>
+                </div>
             </div>
             <div>
-                <h4>Resources</h4>
-                <ul>
-                    <li>Blog</li>
-                    <li>User guides</li>
-                    <li>Webinars</li>
-                </ul>
+                <!-- English content, visible by default -->
+                <div class="content-en">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li>Blog</li>
+                        <li>User guides</li>
+                        <li>Webinars</li>
+                    </ul>
+                </div>
+                <!-- Spanish content, hidden by default -->
+                <div class="content-es" style="display: none;">
+                    <h4>Recursos</h4>
+                    <ul>
+                        <li>Blog</li>
+                        <li>Guías de usuario</li>
+                        <li>Webinars</li>
+                    </ul>
+                </div>
             </div>
             <div>
-                <h4>Company</h4>
-                <ul>
-                    <li>About us</li>
-                    <li>Contact us</li>
-                    <li>Privacy</li>
-                    <li>Terms</li>
-                </ul>
+                <!-- English content, visible by default -->
+                <div class="content-en">
+                    <h4>Company</h4>
+                    <ul>
+                        <li>About us</li>
+                        <li>Contact us</li>
+                        <li>Privacy</li>
+                        <li>Terms</li>
+                    </ul>
+                </div>
+                <!-- Spanish content, hidden by default -->
+                <div class="content-es" style="display: none;">
+                    <h4>Compañía</h4>
+                    <ul>
+                        <li>Sobre nosotros</li>
+                        <li>Contáctanos</li>
+                        <li>Privacidad</li>
+                        <li>Términos</li>
+                    </ul>
+                </div>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>© 2025 Creative Hub by Miroslav Nikolic</p>
+            <!-- English content, visible by default -->
+            <div class="content-en">
+                <p>© 2025 Creative Hub by Miroslav Nikolic</p>
+            </div>
+            <!-- Spanish content, hidden by default -->
+            <div class="content-es" style="display: none;">
+                <p>© 2025 Creative Hub por Miroslav Nikolic</p>
+            </div>
         </div>
     </footer>
 
-    <!-- Added reference to external script.js (for Assignment 6) -->
     <script src="script.js"></script>
 </body>
 </html>
