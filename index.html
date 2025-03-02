@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Creative Hub</title>
     <style>
+        /* CSS */
         * {
             margin: 0;
             padding: 0;
@@ -381,48 +382,16 @@
         </div>
     </section>
 
-    <!-- Testimonial Carousel Section -->
+    <!-- Testimonial Carousel Section - Updated for Assignment 6 -->
     <section class="testimonial-section">
         <h2>What Our Creators Say</h2>
         <div class="testimonial-container">
-            <div class="testimonial-slide active">
-                <div class="testimonial-card">
-                    <img src="images/photo3.jpg" alt="Emily Johnson" class="testimonial-image">
-                    <div class="stars">★★★★★</div>
-                    <p class="testimonial-text">"Creative Hub revolutionized our workflow. The collaboration tools saved us hundreds of hours in project management!"</p>
-                    <div class="testimonial-author">Emily Johnson</div>
-                    <div class="testimonial-role">Lead Designer at Creative Studio</div>
-                </div>
-            </div>
-
-            <div class="testimonial-slide">
-                <div class="testimonial-card">
-                    <img src="images/photo4.jpg" alt="Michael Chen" class="testimonial-image">
-                    <div class="stars">★★★★★</div>
-                    <p class="testimonial-text">"The design assets library is incredible. It's become our team's go-to resource for all creative projects."</p>
-                    <div class="testimonial-author">Michael Chen</div>
-                    <div class="testimonial-role">Creative Director at DesignWorks</div>
-                </div>
-            </div>
-
-            <div class="testimonial-slide">
-                <div class="testimonial-card">
-                    <img src="images/photo5.jpg" alt="Sarah Müller" class="testimonial-image">
-                    <div class="stars">★★★★★</div>
-                    <p class="testimonial-text">"From prototyping to final delivery, Creative Hub streamlines our entire creative process effortlessly."</p>
-                    <div class="testimonial-author">Sarah Müller</div>
-                    <div class="testimonial-role">Founder of Artistry Collective</div>
-                </div>
-            </div>
-
-            <button class="carousel-arrow prev">❮</button>
-            <button class="carousel-arrow next">❯</button>
+            <!-- Testimonials will be inserted dynamically by script.js -->
         </div>
-
+        <button class="carousel-arrow prev">❮</button>
+        <button class="carousel-arrow next">❯</button>
         <div class="auto-scroll-controls">
-            <span class="dot active" onclick="currentSlide(0)"></span>
-            <span class="dot" onclick="currentSlide(1)"></span>
-            <span class="dot" onclick="currentSlide(2)"></span>
+            <!-- Dots will be added dynamically by script.js -->
         </div>
     </section>
 
@@ -464,58 +433,7 @@
         </div>
     </footer>
 
-    <script>
-        let slideIndex = 0;
-        let autoScrollInterval;
-
-        function showSlides(n) {
-            const slides = document.getElementsByClassName("testimonial-slide");
-            const dots = document.getElementsByClassName("dot");
-            
-            if (n >= slides.length) slideIndex = 0;
-            if (n < 0) slideIndex = slides.length - 1;
-            
-            Array.from(slides).forEach(slide => slide.classList.remove("active"));
-            Array.from(dots).forEach(dot => dot.classList.remove("active"));
-            
-            slides[slideIndex].classList.add("active");
-            dots[slideIndex].classList.add("active");
-        }
-
-        function nextSlide() {
-            slideIndex++;
-            showSlides(slideIndex);
-        }
-
-        function prevSlide() {
-            slideIndex--;
-            showSlides(slideIndex);
-        }
-
-        function currentSlide(n) {
-            slideIndex = n;
-            showSlides(slideIndex);
-            resetAutoScroll();
-        }
-
-        function resetAutoScroll() {
-            clearInterval(autoScrollInterval);
-            autoScrollInterval = setInterval(nextSlide, 5000);
-        }
-
-        // Initialize auto-scroll
-        autoScrollInterval = setInterval(nextSlide, 5000);
-
-        // Event listeners
-        document.querySelector('.prev').addEventListener('click', () => {
-            prevSlide();
-            resetAutoScroll();
-        });
-
-        document.querySelector('.next').addEventListener('click', () => {
-            nextSlide();
-            resetAutoScroll();
-        });
-    </script>
+    <!-- Added reference to external script.js (for Assignment 6) -->
+    <script src="script.js"></script>
 </body>
 </html>
