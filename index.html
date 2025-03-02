@@ -231,13 +231,6 @@
             font-size: 0.9rem;
         }
 
-        .carousel-nav {
-            margin-top: 2rem;
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-        }
-
         .carousel-arrow {
             cursor: pointer;
             font-size: 2rem;
@@ -335,7 +328,6 @@
             <a href="#">About</a>
             <a href="#">Create</a>
             <div class="language-selector">
-                <!-- Added id="language-select" and value attributes for language options -->
                 <select id="language-select">
                     <option value="en">EN</option>
                     <option value="es">ES</option>
@@ -346,13 +338,11 @@
 
     <!-- Header with language-specific content blocks -->
     <header>
-        <!-- English content, visible by default -->
         <div class="content-en">
             <h1>Unleash Your Creativity</h1>
             <p>Join Creative Hub to explore, create, and inspire.</p>
             <a href="#" class="button">Sign Up Now</a>
         </div>
-        <!-- Spanish content, hidden by default -->
         <div class="content-es" style="display: none;">
             <h1>Libera Tu Creatividad</h1>
             <p>Únete a Creative Hub para explorar, crear e inspirar.</p>
@@ -362,12 +352,10 @@
 
     <!-- Features container with language-specific content -->
     <section class="features-container">
-        <!-- English content, visible by default -->
         <div class="content-en">
             <h2>Creative Hub Features</h2>
             <p>Explore the powerful tools and functionalities that Creative Hub offers to enhance your creative projects.</p>
         </div>
-        <!-- Spanish content, hidden by default -->
         <div class="content-es" style="display: none;">
             <h2>Características de Creative Hub</h2>
             <p>Explora las poderosas herramientas y funcionalidades que Creative Hub ofrece para mejorar tus proyectos creativos.</p>
@@ -376,7 +364,6 @@
 
     <section class="feature-section">
         <div class="feature-text">
-            <!-- English content, visible by default -->
             <div class="content-en">
                 <h2>Project Collaboration</h2>
                 <p>Seamlessly collaborate with team members in real-time, share ideas, and track progress on your creative projects.</p>
@@ -385,7 +372,6 @@
                     <a href="#">Learn more →</a>
                 </div>
             </div>
-            <!-- Spanish content, hidden by default -->
             <div class="content-es" style="display: none;">
                 <h2>Colaboración en Proyectos</h2>
                 <p>Colabora sin problemas con los miembros del equipo en tiempo real, comparte ideas y sigue el progreso de tus proyectos creativos.</p>
@@ -402,7 +388,6 @@
 
     <section class="feature-section">
         <div class="feature-text">
-            <!-- English content, visible by default -->
             <div class="content-en">
                 <h2>Design Tools</h2>
                 <p>Access a wide range of design tools and templates to bring your creative ideas to life with ease and efficiency.</p>
@@ -411,7 +396,6 @@
                     <a href="#">Learn more →</a>
                 </div>
             </div>
-            <!-- Spanish content, hidden by default -->
             <div class="content-es" style="display: none;">
                 <h2>Herramientas de Diseño</h2>
                 <p>Accede a una amplia gama de herramientas de diseño y plantillas para dar vida a tus ideas creativas con facilidad y eficiencia.</p>
@@ -439,25 +423,28 @@
         </div>
     </section>
 
-    <!-- Footer with language-specific content -->
+    <!-- Footer with updated newsletter form -->
     <footer>
         <div class="footer-content">
             <div class="newsletter">
-                <!-- English content, visible by default -->
+                <!-- English newsletter form -->
                 <div class="content-en">
                     <h4>Subscribe to our newsletter</h4>
-                    <input type="email" placeholder="Enter your email">
-                    <button>Subscribe</button>
+                    <form id="newsletter-form-en">
+                        <input type="email" id="email-input-en" placeholder="Enter your email" required>
+                        <button type="submit">Subscribe</button>
+                    </form>
                 </div>
-                <!-- Spanish content, hidden by default -->
+                <!-- Spanish newsletter form -->
                 <div class="content-es" style="display: none;">
                     <h4>Suscríbete a nuestro boletín</h4>
-                    <input type="email" placeholder="Ingresa tu correo">
-                    <button>Suscribirse</button>
+                    <form id="newsletter-form-es">
+                        <input type="email" id="email-input-es" placeholder="Ingresa tu correo" required>
+                        <button type="submit">Suscribirse</button>
+                    </form>
                 </div>
             </div>
             <div>
-                <!-- English content, visible by default -->
                 <div class="content-en">
                     <h4>Product</h4>
                     <ul>
@@ -466,7 +453,6 @@
                         <li>Photos</li>
                     </ul>
                 </div>
-                <!-- Spanish content, hidden by default -->
                 <div class="content-es" style="display: none;">
                     <h4>Producto</h4>
                     <ul>
@@ -477,7 +463,6 @@
                 </div>
             </div>
             <div>
-                <!-- English content, visible by default -->
                 <div class="content-en">
                     <h4>Resources</h4>
                     <ul>
@@ -486,7 +471,6 @@
                         <li>Webinars</li>
                     </ul>
                 </div>
-                <!-- Spanish content, hidden by default -->
                 <div class="content-es" style="display: none;">
                     <h4>Recursos</h4>
                     <ul>
@@ -497,7 +481,6 @@
                 </div>
             </div>
             <div>
-                <!-- English content, visible by default -->
                 <div class="content-en">
                     <h4>Company</h4>
                     <ul>
@@ -507,7 +490,6 @@
                         <li>Terms</li>
                     </ul>
                 </div>
-                <!-- Spanish content, hidden by default -->
                 <div class="content-es" style="display: none;">
                     <h4>Compañía</h4>
                     <ul>
@@ -520,11 +502,9 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <!-- English content, visible by default -->
             <div class="content-en">
                 <p>© 2025 Creative Hub by Miroslav Nikolic</p>
             </div>
-            <!-- Spanish content, hidden by default -->
             <div class="content-es" style="display: none;">
                 <p>© 2025 Creative Hub por Miroslav Nikolic</p>
             </div>
