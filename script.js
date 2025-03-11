@@ -91,6 +91,11 @@ function resetAutoScroll() {
 // Language selector functionality
 const languageSelect = document.getElementById('language-select');
 
+// Navigation link elements
+const homeLink = document.getElementById('home-link');
+const aboutLink = document.getElementById('about-link');
+const createLink = document.getElementById('create-link');
+
 languageSelect.addEventListener('change', (event) => {
     const selectedLanguage = event.target.value;
     setLanguage(selectedLanguage);
@@ -103,6 +108,17 @@ function setLanguage(lang) {
     document.querySelectorAll(`.content-${lang}`).forEach(element => {
         element.style.display = 'block'; // Show selected language content
     });
+
+    // Update navigation links based on selected language
+    if (lang === 'es') {
+        homeLink.textContent = 'Inicio';
+        aboutLink.textContent = 'Acerca de';
+        createLink.textContent = 'Crear';
+    } else {
+        homeLink.textContent = 'Home';
+        aboutLink.textContent = 'About';
+        createLink.textContent = 'Create';
+    }
 }
 
 // Edited as a part of Assignment 6: Added newsletter form validation and submission
